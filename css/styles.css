@@ -1,0 +1,371 @@
+/* ─── Design Tokens ─────────────────────────────────────── */
+:root {
+  --navy:          #0f172a;
+  --navy-mid:      #1e293b;
+  --slate:         #94a3b8;
+  --sky:           #38bdf8;
+  --white:         #ffffff;
+  --off-white:     #f8fafc;
+  --dark:          #0f172a;
+  --mid-gray:      #64748b;
+  --border:        #e2e8f0;
+  --badge-bg:      #e2e8f0;
+  --badge-text:    #475569;
+  --traction-bg:   #eff6ff;
+  --traction-line: #0ea5e9;
+
+  --font: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --max-width: 900px;
+  --nav-height: 60px;
+}
+
+/* ─── Reset ─────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font);
+  padding-top: var(--nav-height);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ─── Nav ────────────────────────────────────────────────── */
+#nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--nav-height);
+  background: var(--navy-mid);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid rgba(56, 189, 248, 0.2);
+}
+
+.nav-inner {
+  width: 100%;
+  max-width: var(--max-width);
+  padding: 0 2rem;
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.nav-link {
+  color: var(--slate);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--sky);
+}
+
+.nav-cta {
+  margin-left: auto;
+  color: var(--sky);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: 1px solid var(--sky);
+  padding: 0.35rem 1rem;
+  border-radius: 4px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.nav-cta:hover {
+  background: var(--sky);
+  color: var(--navy);
+}
+
+/* ─── Zone Shared ────────────────────────────────────────── */
+.zone-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+/* ─── Zone 1: Salesforce Architect ──────────────────────── */
+.zone--salesforce {
+  background: var(--navy);
+  color: var(--white);
+  padding: 6rem 2rem 5rem;
+}
+
+.hero-name {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 0.5rem;
+}
+
+.hero-title {
+  font-size: 1.3rem;
+  color: var(--sky);
+  font-weight: 500;
+  margin-bottom: 0.4rem;
+}
+
+.hero-sub {
+  font-size: 1rem;
+  color: var(--slate);
+  margin-bottom: 2rem;
+}
+
+.industries {
+  font-size: 0.82rem;
+  color: var(--slate);
+  margin-bottom: 2.5rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.certs {
+  margin-bottom: 2.5rem;
+}
+
+.certs h3 {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--slate);
+  margin-bottom: 0.6rem;
+}
+
+.cert-active {
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.cert-pursuing {
+  color: var(--slate);
+  font-size: 0.9rem;
+  margin-bottom: 0.2rem;
+}
+
+.cert-path {
+  color: var(--sky);
+  font-size: 0.85rem;
+}
+
+.case-studies {
+  margin-bottom: 2.5rem;
+}
+
+.case-studies h3 {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--slate);
+  margin-bottom: 0.75rem;
+}
+
+.case-studies ul {
+  list-style: none;
+}
+
+.case-studies li {
+  padding: 0.6rem 0 0.6rem 1.5rem;
+  position: relative;
+  color: #cbd5e1;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.12);
+}
+
+.case-studies li:first-child {
+  border-top: 1px solid rgba(148, 163, 184, 0.12);
+}
+
+.case-studies li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--sky);
+}
+
+.links-row {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 2.5rem;
+}
+
+.link-btn {
+  color: var(--sky);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding-bottom: 2px;
+  border-bottom: 1px solid rgba(56, 189, 248, 0.3);
+  transition: border-color 0.2s;
+}
+
+.link-btn:hover {
+  border-color: var(--sky);
+}
+
+.zone-cta {
+  border-top: 1px solid rgba(148, 163, 184, 0.15);
+  padding-top: 2rem;
+}
+
+.zone-cta p {
+  color: var(--slate);
+  font-size: 0.95rem;
+  margin-bottom: 0.4rem;
+}
+
+.cta-link {
+  color: var(--sky);
+  font-size: 1.05rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.cta-link:hover {
+  text-decoration: underline;
+}
+
+/* ─── Zone 2: Product Builder ────────────────────────────── */
+.zone--products {
+  background: var(--off-white);
+  color: var(--dark);
+  padding: 5rem 2rem;
+}
+
+.zone-headline {
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.zone-subheadline {
+  font-size: 1rem;
+  color: var(--mid-gray);
+  margin-bottom: 3rem;
+  max-width: 600px;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 640px) {
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .links-row {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+}
+
+.card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.5rem;
+}
+
+.card-name {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.35rem;
+  color: var(--dark);
+}
+
+.card-desc {
+  font-size: 0.875rem;
+  color: var(--mid-gray);
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.card-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.badge {
+  font-size: 0.7rem;
+  background: var(--badge-bg);
+  color: var(--badge-text);
+  padding: 3px 9px;
+  border-radius: 4px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.traction {
+  background: var(--traction-bg);
+  border-left: 3px solid var(--traction-line);
+  padding: 1rem 1.25rem;
+  border-radius: 0 6px 6px 0;
+  margin-bottom: 2rem;
+  font-size: 0.95rem;
+  color: #1e40af;
+  font-weight: 500;
+}
+
+.tech-breadth {
+  font-size: 0.8rem;
+  color: var(--mid-gray);
+  margin-bottom: 2.5rem;
+  line-height: 1.8;
+}
+
+.zone--products .zone-cta {
+  border-top: 1px solid var(--border);
+  padding-top: 2rem;
+}
+
+.zone--products .zone-cta p {
+  color: var(--mid-gray);
+}
+
+.zone--products .cta-link {
+  color: #0ea5e9;
+}
+
+/* ─── Footer ─────────────────────────────────────────────── */
+footer {
+  background: var(--navy);
+  padding: 2.5rem 2rem;
+}
+
+.footer-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.footer-link {
+  color: var(--slate);
+  text-decoration: none;
+  font-size: 0.875rem;
+  transition: color 0.2s;
+}
+
+.footer-link:hover {
+  color: var(--sky);
+}
