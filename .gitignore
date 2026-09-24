@@ -1,2 +1,5 @@
 # Salesforce
 .sf/
+
+# Cloudflare
+.wrangler/
